@@ -1,0 +1,271 @@
+.Swap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5rem;
+
+    .SwapBox {
+        display: flex;
+        flex-direction: column;
+        width: 40svw;
+        height: 45svh;
+        background-color: #0e111b;
+        border: 1px solid #21273a;
+        border-radius: 2rem;
+        overflow: hidden;
+        gap: 2rem;
+
+        .SwapBox__header {
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+
+            .SwapBox__header__text {
+                display: flex;
+                font-size: 2.5rem;
+                font-weight: 700;
+                color: white;
+                margin-left: 2rem;
+            }
+
+            .cog_container {
+                align-self: center;
+                margin-left: auto;
+                margin-right: 2rem;
+                display: flex;
+
+                .SwapBox__header__cog {
+                    color: #51586f;
+                    font-size: 2rem;
+                    transition: 0.3s;
+
+                    &:hover {
+                        cursor: pointer;
+                        color: whitesmoke;
+                        transform: rotate(90deg);
+                    }
+                }
+            }
+        }
+
+        .SwapBox__input {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+
+            .inputField {
+                background-color: #1f2639 !important;
+                color: white !important;
+                height: 7rem !important;
+                width: 94% !important;
+                margin: 0.5rem 3% !important;
+                padding: 1rem;
+                font-size: 2rem;
+                border-radius: 1rem !important;
+
+                ::-ms-reveal {
+                    display: none;
+                }
+
+                &:focus {
+                    outline: none;
+                }
+
+                &::placeholder {
+                    color: #5f6783 !important;
+                }
+            }
+
+            .asset {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: flex-start;
+                position: absolute;
+                height: 4.5rem;
+                width: 12rem;
+                background-color: #3a4157;
+                border-radius: 100px;
+                gap: 1rem;
+                padding: 0rem 1rem;
+                cursor: pointer;
+
+                .tokenLogo {
+                    display: flex;
+                    width: 50px;
+                    height: 50px;
+                }
+
+                .tokenName {
+                    display: flex;
+                    font-size: 1.5rem;
+                    font-weight: 700;
+                    color: white !important;
+                }
+
+                .downOutlined {
+                    color: #51586f;
+                    font-size: 2rem;
+                    transition: 0.3s;
+                }
+
+                &:hover {
+                    background-color: #51586f;
+                    .downOutlined {
+                        color: whitesmoke;
+                    }
+                }
+            }
+
+            .assetOne {
+                right: 2rem;
+                top: 1.75rem;
+            }
+
+            .assetTwo {
+                right: 2rem;
+                bottom: 1.75rem;
+            }
+
+            .switchBtn {
+                display: flex;
+                align-self: center;
+                justify-content: center;
+                font-size: 2rem;
+                transition: 0.3s;
+                position: absolute;
+                background-color: #3a4157;
+                color: #5f6783;
+                border: 3px solid #0e111b;
+                border-radius: 0.5rem;
+                top: 6.5rem;
+                font-size: 1.5rem;
+                z-index: 1;
+                padding: 0.5rem;
+
+                &:hover {
+                    cursor: pointer;
+                    color: whitesmoke;
+                }
+            }
+        }
+    }
+}
+
+// css to remove the line bug between the arrow and the popover
+
+.popover-content-text {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin: 1rem 0;
+}
+
+.ant-popover-inner {
+    border: 1px solid #21273a;
+    background-color: #0e111b !important;
+    display: flex;
+    flex-direction: column;
+}
+
+.ant-popover-title {
+    color: white !important;
+    font-size: 1.5rem !important;
+    font-weight: 500 !important;
+}
+
+.ant-radio-group {
+    margin-top: 1rem;
+}
+
+.ant-radio-button-wrapper {
+    background-color: #1f2639 !important;
+    color: white !important;
+    font-weight: 500;
+    border-color: white !important;
+}
+
+.ant-radio-button-wrapper-checked {
+    border-color: white !important;
+    background-color: #626879 !important;
+}
+
+.ant-radio-button-wrapper-checked::before {
+    background-color: white !important;
+}
+
+.ant-modal {
+    border: 1px solid #363e54;
+    width: 400px !important;
+    border-radius: 10px;
+}
+
+.ant-modal-header {
+    background-color: #0e111b !important;
+}
+
+.ant-modal-title {
+    color: white !important;
+    padding-top: 17px !important;
+    margin-left: 20px !important;
+}
+
+.ant-modal-close-icon {
+    color: #363e54 !important;
+    transition: 0.3s;
+}
+
+.ant-modal-close-icon:hover {
+    color: white !important;
+}
+
+.ant-modal-content {
+    background-color: #0e111b !important;
+    color: white !important;
+    padding: 0px !important;
+
+    .ant-modal-body {
+        padding: 0px !important;
+
+        .modalContent__tokens {
+            .modalContent__token {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: flex-start;
+                padding: 1rem 1.5rem;
+                transition: 0.3s;
+                gap: 1rem;
+
+                &:hover {
+                    background-color: #363e54;
+                    cursor: pointer;
+                }
+
+                .modalContent__token__logo {
+                    display: flex;
+                    width: 3rem;
+                    height: 3rem;
+                }
+
+                .modalContent__token__info {
+                    display: flex;
+                    flex-direction: column;
+                    margin-left: 1rem;
+
+                    .modalContent__token__info__name {
+                        font-size: 1.2rem;
+                        font-weight: 500;
+                    }
+
+                    .modalContent__token__info__ticker {
+                        font-size: 1rem;
+                        font-weight: 400;
+                        color: #5f6783;
+                    }
+                }
+            }
+        }
+    }
+}
