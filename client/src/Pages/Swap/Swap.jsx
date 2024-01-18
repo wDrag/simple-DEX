@@ -101,7 +101,13 @@ const Swap = () => {
           <Input
             placeholder="0"
             value={tokenOneAmount}
-            onChange={changeTokenOneAmount}
+            onChange={(e) => {
+              const value = e.target.value;
+              const reg = /^-?\d*(\.\d*)?$/;
+              if (value.match(reg) || value === "") {
+                changeTokenOneAmount(e);
+              }
+            }}
             className="inputField"
           />
           <div
@@ -140,6 +146,9 @@ const Swap = () => {
             <span className="tokenName">{tokenTwo.ticker}</span>
             <DownOutlined className="downOutlined" />
           </div>
+        </div>
+        <div className="SwapBox__swapButton" disabled={!tokenOneAmount}>
+          Swap
         </div>
       </div>
     </div>
