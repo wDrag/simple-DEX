@@ -9,6 +9,7 @@ import useSlippage from "./hooks/useSlippage";
 import useTokens from "./hooks/useTokens";
 import TokenList from "../../assets/tokenList.json";
 import useModal from "./hooks/useModal";
+import { useEffect } from "react";
 
 const Swap = () => {
   const { slippage, changeSlippage } = useSlippage();
@@ -20,9 +21,15 @@ const Swap = () => {
     tokenTwo,
     switchTokens,
     modifyToken,
+    getTokenPrice,
+    priceRatio,
   } = useTokens();
 
   const { isOpen, closeModal, openModal, changeToken } = useModal();
+
+  useEffect(() => {
+    getTokenPrice(tokenOne.address, tokenTwo.address);
+  }, [tokenOne, tokenTwo]);
 
   const settings = (
     <div>
@@ -108,7 +115,8 @@ const Swap = () => {
                 changeTokenOneAmount(e);
               }
             }}
-            className="inputField"
+            disabled={priceRatio === null}
+            className={`inputField ${tokenOneAmount ? "inputFieldActive" : ""}`}
           />
           <div
             className="asset assetOne"
@@ -134,7 +142,7 @@ const Swap = () => {
             placeholder="0"
             value={tokenTwoAmount}
             disabled={true}
-            className="inputField"
+            className={`inputField ${tokenOneAmount ? "inputFieldActive" : ""}`}
           />
           <div
             className="asset assetTwo"

@@ -53,7 +53,7 @@
 
             .inputField {
                 background-color: #1f2639 !important;
-                color: white !important;
+                color: #5f6783;
                 height: 7rem !important;
                 width: 94% !important;
                 margin: 0.2rem 3% !important;
@@ -76,6 +76,10 @@
                 &[disabled] {
                     cursor: default;
                 }
+            }
+
+            .inputFieldActive {
+                color: white !important;
             }
 
             .asset {
