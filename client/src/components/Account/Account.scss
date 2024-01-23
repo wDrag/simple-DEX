@@ -1,0 +1,32 @@
+.Account {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: auto;
+    height: 100%;
+    padding: 1.5rem 2rem;
+    border: none;
+    border-radius: 3rem;
+    color: #6e7fce;
+    background-color: #273056;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+        background-color: #58b1ff;
+        color: white;
+        transform: scale(1.05);
+    }
+
+    .AccountAddress {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        font-size: 1.5rem;
+        font-weight: 700;
+
+        gap: 1rem;
+    }
+}

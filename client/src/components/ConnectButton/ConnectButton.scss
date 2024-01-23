@@ -1,0 +1,23 @@
+.connect-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    width: auto;
+    height: 100%;
+    padding: 1.5rem 2rem;
+    border: none;
+    border-radius: 3rem;
+    color: #6e7fce;
+    background-color: #273056;
+    font-size: 1.5rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+        background-color: #58b1ff;
+        color: white;
+        transform: scale(1.05);
+    }
+}

@@ -2,9 +2,14 @@ import "./Header.scss";
 import Logo from "../../assets/angler-fish.svg";
 import Eth from "../../assets/eth.svg";
 import useSelectedPage from "./hooks/useSelectedPage";
+import { useAccount } from "wagmi";
+import ConnectButton from "../ConnectButton/ConnectButton";
+import Account from "../Account/Account";
 
 const Header = () => {
   const { Page, changePage } = useSelectedPage();
+
+  const { isConnected } = useAccount();
 
   return (
     <div className="Header">
@@ -47,7 +52,7 @@ const Header = () => {
           />
           <div className="Header__right__chainName__text">Ethereum</div>
         </div>
-        <div className="Header__right__button">Connect</div>
+        {isConnected ? <Account /> : <ConnectButton />}
       </div>
     </div>
   );

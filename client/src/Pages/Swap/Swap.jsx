@@ -5,11 +5,11 @@ import {
   ArrowDownOutlined,
 } from "@ant-design/icons";
 import { Popover, Radio, Input, Modal } from "antd";
-import useSlippage from "./hooks/useSlippage";
-import useTokens from "./hooks/useTokens";
-import TokenList from "../../assets/tokenList.json";
 import useModal from "./hooks/useModal";
 import { useEffect } from "react";
+import TokenList from "../../assets/tokenList.json";
+import useSlippage from "./hooks/useSlippage";
+import useTokens from "./hooks/useTokens";
 
 const Swap = () => {
   const { slippage, changeSlippage } = useSlippage();
